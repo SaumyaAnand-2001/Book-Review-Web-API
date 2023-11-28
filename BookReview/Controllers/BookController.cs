@@ -139,7 +139,8 @@ namespace BookReview.Controllers
         
         public IActionResult ClearDb()
         {
-            _context.Database.EnsureDeleted();
+            _context.Book.ExecuteDeleteAsync();
+            _context.Review.ExecuteDeleteAsync();
             return Ok();
         }
 
