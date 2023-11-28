@@ -45,7 +45,7 @@ namespace BookReview.Controllers
             }
             else { 
                 book.Reviews.Add(review);
-                if (!_bookRepository.updateBook(book))
+                if (!_bookRepository.updateBook(book) )
                 {
                     ModelState.AddModelError("", "Something went wrong updating owner");
                     return StatusCode(500, ModelState);

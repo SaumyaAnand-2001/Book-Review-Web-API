@@ -9,7 +9,7 @@ namespace BookReview.Interfaces
         bool deleteBook(Book Book);
         Book getById(int Id);
         List<Book> getAll();
-         bool BookExists(int Id);
+        bool BookExists(int Id);
         bool Save();
 
     }

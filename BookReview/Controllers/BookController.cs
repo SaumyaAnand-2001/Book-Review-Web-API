@@ -18,6 +18,7 @@ namespace BookReview.Controllers
         private readonly IReviewRepository _reviewRepository;
         private readonly IMapper _mapper;
         private readonly BookReviewContext _context;
+        
 
         //public IActionResult Index() { 
         //    return View();
@@ -109,13 +110,13 @@ namespace BookReview.Controllers
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
-        public IActionResult DeleteBook([FromBody]BookDto bookDto) {
-            if (!_bookRepository.BookExists(bookDto.Id))
+        public IActionResult DeleteBook([FromBody]BookRequestDto bookRequestDto) {
+            if (!_bookRepository.BookExists(bookRequestDto.Id))
             {
                 return NotFound();
             }
 
-            var reviewsToDelete = _reviewRepository.GetAllByBookId(bookDto.Id);
+            var reviewsToDelete = _reviewRepository.GetAllByBookId(bookRequestDto.Id);
 
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -125,7 +126,7 @@ namespace BookReview.Controllers
                 ModelState.AddModelError("", "Something went wrong when deleting reviews");
             }
 
-            if (!_bookRepository.deleteBook(_mapper.Map<Book>(bookDto)))
+            if (!_bookRepository.deleteBook(_mapper.Map<Book>(bookRequestDto)))
             {
                 ModelState.AddModelError("", "Something went wrong deleting owner");
             }
@@ -139,7 +140,6 @@ namespace BookReview.Controllers
         public IActionResult ClearDb()
         {
             _context.Database.EnsureDeleted();
-            _context.Database.Migrate();
             return Ok();
         }
 

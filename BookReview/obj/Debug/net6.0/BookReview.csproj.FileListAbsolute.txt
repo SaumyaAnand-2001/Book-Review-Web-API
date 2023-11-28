@@ -70,3 +70,12 @@ C:\Users\anand\source\repos\BookReview\BookReview\bin\Debug\net6.0\runtimes\unix
 C:\Users\anand\source\repos\BookReview\BookReview\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\anand\source\repos\BookReview\BookReview\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\anand\source\repos\BookReview\BookReview\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\anand\source\repos\BookReview\BookReview\bin\Debug\net6.0\MediatR.dll
+C:\Users\anand\source\repos\BookReview\BookReview\bin\Debug\net6.0\MediatR.Contracts.dll
+C:\Users\anand\source\repos\BookReview\BookReview\bin\Debug\net6.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\anand\source\repos\BookReview\BookReview\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\anand\source\repos\BookReview\BookReview\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\anand\source\repos\BookReview\BookReview\bin\Debug\net6.0\System.Net.Http.WebRequest.dll
+C:\Users\anand\source\repos\BookReview\BookReview\bin\Debug\net6.0\System.Net.Http.Extensions.dll
+C:\Users\anand\source\repos\BookReview\BookReview\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Users\anand\source\repos\BookReview\BookReview\bin\Debug\net6.0\System.Net.Http.Primitives.dll

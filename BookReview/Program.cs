@@ -4,6 +4,8 @@ using BookReview.Data;
 using System.Text.Json.Serialization;
 using BookReview.Interfaces;
 using BookReview.Repository;
+using MediatR;
+using BookReview.Handler;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
@@ -17,6 +19,8 @@ builder.Services.AddScoped<IBookRepository, BookRepository>();
 builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
 builder.Services.AddDbContext<BookReviewContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("BookReviewContext") ?? throw new InvalidOperationException("Connection string 'BookReviewContext' not found.")));
+//builder.Services.AddMediatR(typeof(BookRepository).Assembly);
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(QueryHandler).Assembly, typeof(CommandHandler).Assembly));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
